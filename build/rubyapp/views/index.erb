@@ -1,0 +1,20 @@
+<h2>Sign our Guestbook</h2>
+
+  <form accept-charset="UTF-8" action="/function/rubyapp/sign" method="post">
+    <input id="first-name" name="first-name" type="text" />
+    <input id="last-name" name="last-name" type="text" />
+
+    <input name="submit" type="submit" value="Sign" />
+  </form>
+
+  
+<% if visitors.length > 0 %>
+<h3>Our visitors include:</h3>
+    
+<ul>
+  <% visitors.each do |visitor| %>
+    <li><%= visitor %></li>
+  <% end %>
+</ul>
+<% end %>
+
