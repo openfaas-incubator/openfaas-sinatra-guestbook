@@ -10,6 +10,7 @@ RUN bundle install \
 
 COPY views/index.erb /home/app/views
 COPY views/signed.erb /home/app/views
+COPY views/layout.erb /home/app/views
 
 RUN addgroup -S app \
   && adduser app -S -G app

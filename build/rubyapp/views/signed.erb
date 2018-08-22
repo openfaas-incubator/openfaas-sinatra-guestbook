@@ -1,7 +1,14 @@
-<p>Thank you!</p>
+<div class="container">
 
-<p>The guestbook has been signed-by: <%= params["first-name"] + " " + params["last-name"] %>.</p>
+    <header class="jumbotron my-4">
+        <p class="display-3">Thank you!</p>
 
-<p><a href="/function/rubyapp">Back to Guestbook</a></p>
+        <p class="card-title">The guestbook has been signed-by: <%= params["first-name"] + " " + params["last-name"] %> </p>
+    </header>
 
+    <div class="jumbotron my-4">
+        <p><a href="/function/rubyapp" class="btn btn-primary btn-lg" >Back to Guestbook</a></p>
+    </div>
+
+</div>
 

@@ -1,20 +1,29 @@
-<h2>Sign our Guestbook</h2>
+<div class="container">
 
-  <form accept-charset="UTF-8" action="/function/rubyapp/sign" method="post">
-    <input id="first-name" name="first-name" type="text" />
-    <input id="last-name" name="last-name" type="text" />
+<header class="jumbotron my-4">
+    <h3 class="display-3">Sign our Guestbook</h3> </br>
 
-    <input name="submit" type="submit" value="Sign" />
-  </form>
+    <form accept-charset="UTF-8" action="/function/rubyapp/sign" method="post">
+      First Name: <input id="first-name" name="first-name" type="text" /> </br> </br>
+      Last  Name: <input id="last-name" name="last-name" type="text" /> </br> </br>
 
-  
-<% if visitors.length > 0 %>
-<h3>Our visitors include:</h3>
-    
-<ul>
-  <% visitors.each do |visitor| %>
-    <li><%= visitor %></li>
-  <% end %>
-</ul>
-<% end %>
+      <input name="submit" class="btn btn-primary btn-lg" type="submit" value="Sign" />
+    </form>
 
+</header>
+
+  <div class="jumbotron my-4">
+
+      <% if visitors.length > 0 %>
+          <h4 class="card-title">Our visitors include:</h4>
+          
+          <ul>
+            <% visitors.each do |visitor| %>
+              <li><%= visitor %></li>
+            <% end %>
+          </ul>
+      <% end %>
+
+  </div>
+
+</div>
