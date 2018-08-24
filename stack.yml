@@ -7,4 +7,4 @@ functions:
   guestbook:
     lang: dockerfile
     handler: ./guestbook
-    image: docwareiy/guestbook:latest
+    image: docwareiy/guestbook:0.1

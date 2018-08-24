@@ -17,6 +17,10 @@ get '/frank-says' do
     "Path parameters are working perfectly with OpenFaaS"
 end
 
+post '/frank-says' do
+    "Path parameters are working perfectly with OpenFaaS"
+end
+
 post "/sign" do
     visitors.push(params["first-name"] + " " + params["last-name"])
   
