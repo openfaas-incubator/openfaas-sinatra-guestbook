@@ -1,16 +1,16 @@
 FROM ruby:2.4-alpine3.6
-
 WORKDIR /home/app
 
-COPY Gemfile    		.
-COPY index.rb           .
+RUN mkdir -p /home/app/views
 
-RUN bundle install \
-  && mkdir -p /home/app/views
+COPY Gemfile    .
 
-COPY views/index.erb /home/app/views
-COPY views/signed.erb /home/app/views
-COPY views/layout.erb /home/app/views
+RUN apk add --no-cache mysql-dev make build-base git \
+  && bundle install \
+  && apk del make build-base git
+
+COPY index.rb   .
+COPY views      views
 
 RUN addgroup -S app \
   && adduser app -S -G app
@@ -22,5 +22,7 @@ WORKDIR /home/app
 RUN touch /tmp/.lock
 
 HEALTHCHECK --interval=2s CMD [ -e /tmp/.lock ] || exit 1
+
+# USER app
 
 CMD ["ruby", "index.rb"]

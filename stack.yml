@@ -7,4 +7,10 @@ functions:
   guestbook:
     lang: dockerfile
     handler: ./guestbook
-    image: docwareiy/guestbook:0.2
+    image: alexellis2/openfaas-sinatra-guestbook:0.1
+    labels:
+      com.openfaas.scale.min: 2
+      com.openfaas.scale.max: 4
+      com.openfaas.scale.zero: false
+    environment_file:
+      - sql.yml

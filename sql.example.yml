@@ -1,0 +1,6 @@
+environment:
+  DB_HOST: IP
+  DB_PORT: PORT
+  DB_NAME: db
+  DB_USER: admin
+  DB_PASSWORD: password

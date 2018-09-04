@@ -1,3 +1,4 @@
 template
 .vscode/
 .DS_Store
+sql.yml
