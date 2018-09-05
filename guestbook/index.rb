@@ -27,7 +27,9 @@ end
 set :port, 8080
 set :bind, '0.0.0.0'
 
-visitors = Array.new
+open('/tmp/.lock', 'w') { |f|
+  f.puts "Service started"
+}
 
 get '/' do
     erb :index, locals: { visitors: Visitor.all}

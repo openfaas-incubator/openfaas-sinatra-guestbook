@@ -19,8 +19,6 @@ RUN chown app:app -R /home/app
 
 WORKDIR /home/app
 
-RUN touch /tmp/.lock
-
 HEALTHCHECK --interval=2s CMD [ -e /tmp/.lock ] || exit 1
 
 # USER app
